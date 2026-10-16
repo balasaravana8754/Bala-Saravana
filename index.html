@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bala Saravana.K</title>
+<meta name="description" content="Portfolio of Bala Saravana.K, first-year B.Tech IT student.">
+<meta name="theme-color" content="#f0e8d6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Special+Elite&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --paper:#f0e8d6; --paper2:#e6dbc2; --ink:#1f1b17; --ink2:#5b5247;
+  --red:#b3402b; --teal:#2c6b66;
+  --type:'Special Elite','Courier New',monospace;
+  --serif:'Newsreader',Georgia,serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+:root[data-theme="carbon"]{
+  --paper:#1a1815; --paper2:#26221c; --ink:#ece3cf; --ink2:#a39a88;
+  --red:#e2634a; --teal:#74b5aa;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:1.1rem;line-height:1.65;
+  padding-left:30px;padding-right:20px;overflow-x:hidden;
+  transition:background-color .01s;
+}
+body.lock{overflow:hidden}
+/* paper grain + margin rule */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+:root[data-theme="carbon"] body::before{opacity:.05;filter:invert(1)}
+body::after{
+  content:"";position:fixed;top:0;bottom:0;left:16px;width:1px;background:var(--red);opacity:.4;pointer-events:none;z-index:49;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1080px;margin:0 auto}
+.type{font-family:var(--type);font-weight:400}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:40;background:var(--paper);
+  margin:0 -20px 0 -30px;padding:10px 20px 10px 30px;
+  border-bottom:1px dashed var(--ink2);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--type);text-decoration:none;font-size:1rem;letter-spacing:.04em}
+nav{display:flex;gap:.8rem;font-family:var(--type);font-size:.8rem;order:3;width:100%}
+nav a{text-decoration:none;border-bottom:1px solid transparent;padding:2px 0;transition:border-color .2s,color .2s}
+nav a:hover{border-color:var(--red);color:var(--red)}
+.switch{
+  font-family:var(--type);font-size:.78rem;display:flex;align-items:center;gap:.6rem;
+  background:none;border:0;color:var(--ink);cursor:pointer;padding:4px 0;
+}
+.lever{width:46px;height:22px;border:2px solid var(--ink);border-radius:6px;position:relative;background:var(--paper2);flex:none}
+.lever i{
+  position:absolute;top:2px;left:2px;width:14px;height:14px;background:var(--red);border-radius:3px;
+  transition:transform .45s var(--ease);box-shadow:0 2px 0 var(--ink);
+}
+:root[data-theme="carbon"] .lever i{transform:translateX(24px)}
+@media(min-width:760px){
+  nav{order:0;width:auto;gap:1.6rem;font-size:.9rem}
+  .bar{flex-wrap:nowrap}
+}
+
+/* sections */
+section{padding:72px 0 40px;scroll-margin-top:60px}
+.folio{font-family:var(--type);font-size:.82rem;color:var(--ink2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
+h2{font-family:var(--type);font-weight:400;font-size:clamp(2.6rem,11vw,5.6rem);line-height:.98;letter-spacing:-.01em;margin-bottom:2rem}
+h2 em{font-style:normal;color:var(--red)}
+.fill{color:var(--red);border-bottom:2px dashed var(--red);padding:0 2px;font-style:normal}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+
+/* hero */
+#top{padding-top:44px;min-height:calc(100svh - 70px);display:flex;flex-direction:column;justify-content:center}
+.hero{display:grid;gap:1.4rem;grid-template-columns:1fr}
+.mono{width:104px;height:104px;transform:rotate(-6deg);cursor:pointer;-webkit-tap-highlight-color:transparent;background:none;border:0;padding:0}
+.mono svg{width:100%;height:100%;overflow:visible}
+.mono .base{fill:var(--ink)}
+.mono .cap{fill:var(--paper2);stroke:var(--ink);stroke-width:4;transition:transform .12s ease-out}
+.mono .ring{fill:none;stroke:var(--ink);stroke-width:1.5}
+.mono .arc{fill:none;stroke:var(--red);stroke-width:4;stroke-linecap:round}
+.mono text{font-family:var(--type);font-size:58px;fill:var(--ink);text-anchor:middle}
+.mono g.press{transition:transform .12s ease-out}
+.mono:hover g.press,.mono:active g.press{transform:translateY(6px)}
+h1{
+  font-family:var(--type);font-weight:400;line-height:.95;letter-spacing:-.02em;
+  font-size:clamp(2.6rem,14.2vw,9.2rem);
+}
+h1 span{display:block}
+h1 .l2{margin-left:.35em}
+h1 .dot{color:var(--red)}
+.tag{font-style:italic;font-size:clamp(1.25rem,4.5vw,1.7rem);line-height:1.35;max-width:26ch;margin-top:.6rem}
+.now{font-family:var(--type);font-size:.95rem;margin-top:1.2rem;max-width:44ch}
+.now b{font-weight:400;color:var(--red)}
+.caret{display:inline-block;width:.55em;height:1em;background:var(--ink);vertical-align:-.12em;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.key{
+  font-family:var(--type);font-size:1rem;text-decoration:none;display:inline-block;
+  padding:.75rem 1.4rem;border:2px solid var(--ink);border-radius:10px;
+  background:var(--paper2);color:var(--ink);box-shadow:0 5px 0 var(--ink);
+  transition:transform .12s ease-out,box-shadow .12s ease-out;
+}
+.key:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--ink)}
+.key:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+.key.red{background:var(--red);color:var(--paper);border-color:var(--ink)}
+.hero>*{opacity:1}
+.js body:not(.go) .hero > *, .js body:not(.go) .hero-in{opacity:0}
+.go .hero>*{animation:rise .9s var(--ease) both}
+.go .hero>*:nth-child(2){animation-delay:.12s}
+.go .hero>*:nth-child(3){animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media(min-width:820px){
+  body{padding-left:96px;padding-right:48px}
+  body::after{left:64px}
+  header{margin:0 -48px 0 -96px;padding:12px 48px 12px 96px}
+  .hero{grid-template-columns:1fr auto;align-items:start;column-gap:3rem}
+  .hero .mono{grid-column:2;grid-row:1;width:190px;height:190px;margin-top:.8rem}
+  .hero .nameblock{grid-column:1;grid-row:1}
+  .hero .rest{grid-column:1 / -1}
+}
+
+/* about */
+.about-grid{display:grid;gap:2rem}
+.about-grid p{margin-bottom:1.2rem;max-width:58ch}
+.about-grid p:first-child::first-line{font-variant:small-caps;letter-spacing:.04em}
+.memo{
+  font-family:var(--type);font-size:.88rem;border:1.5px solid var(--ink);padding:1rem 1.1rem;
+  align-self:start;transform:rotate(-1.4deg);background:var(--paper2);max-width:300px;line-height:1.7;
+}
+.memo dt{color:var(--ink2);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;margin-top:.5rem}
+.memo dt:first-child{margin-top:0}
+@media(min-width:820px){.about-grid{grid-template-columns:1.6fr 1fr;gap:4rem}}
+
+/* skills */
+.lead{max-width:50ch;margin-bottom:2.2rem}
+.cols{display:grid;gap:2.4rem}
+.col h3{font-family:var(--type);font-weight:400;font-size:1.5rem;margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:2px solid var(--ink)}
+.col.l h3{border-bottom-style:dashed;border-color:var(--red)}
+.col.g h3{border-bottom-style:dotted}
+.col.c h3{border-color:var(--teal);color:var(--teal)}
+.col ul{list-style:none;font-family:var(--type);font-size:1.02rem}
+.col li{padding:.28rem 0 .28rem 1.3rem;position:relative}
+.col li::before{content:"";position:absolute;left:0;top:.9em;width:.6rem;height:2px;background:var(--ink)}
+.col.c li::before{height:6px;width:6px;border-radius:50%;top:.85em;background:var(--teal)}
+.col.l li::before{background:var(--red)}
+@media(min-width:820px){.cols{grid-template-columns:repeat(3,1fr);gap:3rem}.col.g{margin-top:2.5rem}.col.c{margin-top:5rem}}
+
+/* journey */
+.rows{border-top:1px dashed var(--ink2)}
+.row{display:grid;gap:.6rem;padding:1.8rem 0;border-bottom:1px dashed var(--ink2)}
+.row .lab{font-family:var(--type);font-size:clamp(1.8rem,7vw,3rem);line-height:1}
+.row:nth-child(1) .lab{color:var(--ink)}
+.row:nth-child(2) .lab{color:var(--teal)}
+.row:nth-child(3) .lab{color:var(--red)}
+.row p{max-width:56ch;margin-bottom:.7rem}
+.row .stamp{
+  display:inline-block;font-family:var(--type);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  border:2px solid currentColor;padding:.1rem .5rem;transform:rotate(-3deg);margin-bottom:.6rem;opacity:.85
+}
+@media(min-width:820px){.row{grid-template-columns:260px 1fr;gap:3rem;align-items:start}.row:nth-child(2){padding-left:3rem}.row:nth-child(3){padding-left:6rem}}
+
+/* beyond */
+.slips{display:flex;flex-wrap:wrap;gap:1.6rem 1.4rem;align-items:flex-start}
+.slip{
+  position:relative;background:var(--paper2);border:1px solid var(--ink2);padding:1.3rem 1.2rem 1rem;
+  font-family:var(--type);font-size:1rem;line-height:1.5;max-width:100%;width:min(100%,290px);
+  box-shadow:3px 4px 0 var(--ink);transition:transform .35s var(--ease);
+}
+.slip::before{
+  content:"";position:absolute;top:-10px;left:50%;width:64px;height:18px;margin-left:-32px;
+  background:var(--red);opacity:.55;transform:rotate(-2deg);
+}
+.slip small{display:block;color:var(--ink2);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.4rem}
+.slip:nth-child(1){transform:rotate(-1.5deg)}
+.slip:nth-child(2){transform:rotate(1.2deg) translateY(18px);width:min(100%,330px)}
+.slip:nth-child(3){transform:rotate(-.6deg);width:min(100%,260px)}
+.slip:nth-child(4){transform:rotate(2deg) translateY(10px)}
+.slip:hover{transform:rotate(0) translateY(-4px)}
+
+/* contact */
+#contact h2{font-size:clamp(3.2rem,16vw,9rem)}
+.mail{font-family:var(--type);font-size:clamp(1.15rem,5.2vw,2.2rem);word-break:break-word;text-decoration:none;border-bottom:3px solid var(--red);transition:color .2s}
+.mail:hover{color:var(--red)}
+.links{margin-top:2rem;font-family:var(--type);font-size:1.05rem;display:grid;gap:.5rem}
+.links a{text-decoration:none;display:inline-block;transition:transform .25s var(--ease)}
+.links a:hover{transform:translateX(8px);color:var(--teal)}
+.links span{color:var(--ink2);display:inline-block;width:6.5rem}
+footer{padding:80px 0 40px;font-family:var(--type);font-size:.82rem;color:var(--ink2);line-height:1.8}
+
+/* opening */
+#intro{
+  position:fixed;inset:0;z-index:100;background:var(--paper);display:flex;align-items:center;justify-content:center;
+  padding:24px;transition:opacity .5s ease;
+}
+#intro.out{opacity:0;pointer-events:none}
+#intro p{font-family:var(--type);font-size:clamp(1.5rem,6.4vw,3.2rem);letter-spacing:-.01em;min-height:1.2em}
+#skip{
+  position:absolute;right:20px;bottom:24px;font-family:var(--type);font-size:.9rem;background:none;
+  border:2px solid var(--ink);border-radius:8px;padding:.4rem .9rem;color:var(--ink);cursor:pointer;box-shadow:0 3px 0 var(--ink)
+}
+#skip:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+
+/* theme sheet */
+#sheet{position:fixed;inset:0;z-index:90;pointer-events:none;transform:translateY(101%);will-change:transform}
+#sheet::after{content:"";position:absolute;left:0;right:0;top:-14px;height:14px;background:repeating-linear-gradient(90deg,transparent 0 10px,currentColor 10px 11px);opacity:.15}
+
+/* easter egg */
+#note{
+  position:fixed;left:50%;bottom:22px;z-index:80;transform:translate(-50%,30px);opacity:0;pointer-events:none;
+  font-family:var(--type);font-size:.95rem;background:var(--paper2);border:2px solid var(--teal);color:var(--ink);
+  padding:.8rem 1.1rem;box-shadow:4px 5px 0 var(--teal);max-width:calc(100vw - 40px);width:max-content;
+  transition:opacity .4s ease,transform .5s var(--ease);
+}
+#note.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .js .rv{opacity:1;transform:none}
+  .js body:not(.go) .hero>*{opacity:1}
+}
+</style>
+</head>
+<body class="lock">
+
+<div id="intro" role="status" aria-live="polite">
+  <p><span id="typed"></span><span class="caret"></span></p>
+  <button id="skip" type="button">Skip &rsaquo;</button>
+</div>
+<div id="sheet" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Back to top">B.S.</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#beyond">Beyond</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="switch" id="themeBtn" type="button" aria-pressed="false" aria-label="Switch paper between cream and carbon">
+      <span id="themeLabel">Paper: cream</span>
+      <span class="lever" aria-hidden="true"><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="top">
+  <div class="hero">
+    <button class="mono" id="mono" type="button" aria-label="Monogram BS, a typewriter key">
+      <svg viewBox="0 0 160 160" aria-hidden="true">
+        <circle class="base" cx="80" cy="88" r="70"/>
+        <g class="press">
+          <circle class="cap" cx="80" cy="80" r="70"/>
+          <circle class="ring" cx="80" cy="80" r="58"/>
+          <path class="arc" d="M32 58 A52 52 0 0 1 70 29"/>
+          <text x="80" y="100">BS</text>
+        </g>
+      </svg>
+    </button>
+    <div class="nameblock">
+      <p class="folio">Portfolio &middot; first-year B.Tech IT</p>
+      <h1><span>Bala</span><span class="l2">Saravana<span class="dot">.</span>K</span></h1>
+    </div>
+    <div class="rest">
+      <p class="tag">Learning to build things that work first, and then things that look like someone cared.</p>
+      <p class="now"><b>currently&hellip;</b> finding my feet in first year, one lab and one late-night bug at a time.<span class="caret"></span></p>
+      <div class="btns">
+        <a class="key" href="#about">Explore</a>
+        <a class="key red" href="#contact">Say hi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <p class="folio rv">Page 01 &mdash; About</p>
+  <h2 class="rv">About<em>.</em></h2>
+  <div class="about-grid">
+    <div class="rv">
+      <p>Hi, I'm Bala. I'm in the first year of B.Tech Information Technology, which means most of what I know is still fresh enough that I remember the day I learned it.</p>
+      <p>I got into this because <span class="fill">[ the real reason you picked IT ]</span>. The first time something I wrote actually ran, <span class="fill">[ what you felt, or what the program did ]</span>.</p>
+      <p>Right now I'm trying to build good habits early: write small programs often, break them on purpose, and read other people's code. I'd rather be honest about being a beginner than pretend otherwise. It makes it easier to ask good questions.</p>
+      <p>I'm looking for <span class="fill">[ what you want next: projects, teammates, internships ]</span>.</p>
+    </div>
+    <dl class="memo rv">
+      <dt>Name</dt><dd>Bala Saravana.K</dd>
+      <dt>Studying</dt><dd>B.Tech IT, year 1</dd>
+      <dt>From</dt><dd><span class="fill">[ your town ]</span></dd>
+      <dt>Status</dt><dd>Learning in public</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="folio rv">Page 02 &mdash; Skills</p>
+  <h2 class="rv">What I can<br><em>do</em>, honestly.</h2>
+  <p class="lead rv">No bars, no percentages. Three honest labels. Move the items to match where you really are.</p>
+  <div class="cols">
+    <div class="col l rv">
+      <h3>Learning</h3>
+      <ul>
+        <li>Data structures</li>
+        <li>JavaScript</li>
+        <li>Git and GitHub</li>
+        <li><span class="fill">[ add yours ]</span></li>
+      </ul>
+    </div>
+    <div class="col g rv">
+      <h3>Getting there</h3>
+      <ul>
+        <li>HTML and CSS</li>
+        <li>Python basics</li>
+        <li><span class="fill">[ add yours ]</span></li>
+      </ul>
+    </div>
+    <div class="col c rv">
+      <h3>Comfortable</h3>
+      <ul>
+        <li>C fundamentals</li>
+        <li>Asking for help</li>
+        <li><span class="fill">[ add yours ]</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <p class="folio rv">Page 03 &mdash; Journey</p>
+  <h2 class="rv">The <em>journey</em> so far.</h2>
+  <div class="rows">
+    <div class="row rv">
+      <div class="lab">Made</div>
+      <div>
+        <span class="stamp">Filed</span>
+        <p>This portfolio, typed out in a single HTML file.</p>
+        <p><span class="fill">[ a project, lab or mini-app you built, and what it does ]</span></p>
+      </div>
+    </div>
+    <div class="row rv">
+      <div class="lab">Learning</div>
+      <div>
+        <span class="stamp">In progress</span>
+        <p>Core programming, how the web works, and how to read errors without panicking.</p>
+        <p><span class="fill">[ the one topic you're most stuck on or excited about right now ]</span></p>
+      </div>
+    </div>
+    <div class="row rv">
+      <div class="lab">Next</div>
+      <div>
+        <span class="stamp">To do</span>
+        <p>I want to build something that other people actually use, even if it's tiny.</p>
+        <p><span class="fill">[ your dream project, in one honest sentence ]</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beyond">
+  <p class="folio rv">Page 04 &mdash; Beyond code</p>
+  <h2 class="rv">Off the <em>keyboard</em>.</h2>
+  <div class="slips">
+    <div class="slip rv"><small>Hobby</small><span class="fill">[ something you do when no one's asking you to study ]</span></div>
+    <div class="slip rv"><small>Fun fact</small><span class="fill">[ a true, slightly odd fact about you ]</span></div>
+    <div class="slip rv"><small>On repeat</small><span class="fill">[ a song, show or game ]</span></div>
+    <div class="slip rv"><small>Ask me about</small><span class="fill">[ a topic you can talk about for an hour ]</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="folio rv">Last page &mdash; Contact</p>
+  <h2 class="rv">Say hi<em>.</em></h2>
+  <p class="rv" style="margin-bottom:1.4rem;max-width:44ch">If you have a project, a question, or advice for a first-year, write to me. I read everything.</p>
+  <p class="rv"><a class="mail" href="mailto:your.email@example.com">your.email@example.com</a></p>
+  <div class="links rv">
+    <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener"><span>LinkedIn</span>/in/your-handle</a>
+    <a href="https://github.com/your-handle" target="_blank" rel="noopener"><span>GitHub</span>@your-handle</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>Typed by hand in one file, October 2026.<br>&copy; Bala Saravana.K<br>psst: every typewriter has a bell.</p>
+</footer>
+
+<div id="note" role="status" aria-live="polite">Ding. You found the carriage bell. Hello, curious one.</div>
+
+<script>
+(function(){
+  var root=document.documentElement, body=document.body;
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+
+  /* ---------- theme (Signature move: the paper sheet) ---------- */
+  var PAPER={paper:'#f0e8d6',carbon:'#1a1815'};
+  var btn=document.getElementById('themeBtn'), label=document.getElementById('themeLabel'), sheet=document.getElementById('sheet');
+  var meta=document.querySelector('meta[name="theme-color"]');
+  function paint(t){
+    root.setAttribute('data-theme',t);
+    btn.setAttribute('aria-pressed',t==='carbon');
+    label.textContent='Paper: '+(t==='carbon'?'carbon':'cream');
+    if(meta)meta.setAttribute('content',PAPER[t]);
+  }
+  var saved=store('bs-theme');
+  var start=saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'carbon':'paper');
+  paint(start);
+  var busy=false;
+  btn.addEventListener('click',function(){
+    if(busy)return;
+    var next=root.getAttribute('data-theme')==='carbon'?'paper':'carbon';
+    store('bs-theme',next);
+    if(rm||!sheet.animate){paint(next);return}
+    busy=true;
+    sheet.style.background=PAPER[next];
+    sheet.style.color=next==='carbon'?'#ece3cf':'#1f1b17';
+    var ease='cubic-bezier(.7,0,.2,1)';
+    var a=sheet.animate([{transform:'translateY(101%)'},{transform:'translateY(0)'}],{duration:480,easing:ease,fill:'forwards'});
+    a.onfinish=function(){
+      paint(next);
+      var b=sheet.animate([{transform:'translateY(0)'},{transform:'translateY(-101%)'}],{duration:480,easing:ease,fill:'forwards',delay:80});
+      b.onfinish=function(){a.cancel();b.cancel();busy=false};
+    };
+  });
+
+  /* ---------- opening: typewriter ---------- */
+  var intro=document.getElementById('intro'), typed=document.getElementById('typed'), skip=document.getElementById('skip');
+  var text="Hello. I'm Bala Saravana.", i=0, over=false, timers=[];
+  function done(){
+    if(over)return; over=true;
+    timers.forEach(clearTimeout);
+    intro.classList.add('out');
+    body.classList.remove('lock');
+    body.classList.add('go');
+    store('bs-intro','1');
+    setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro)},550);
+  }
+  skip.addEventListener('click',done);
+  var seen=false;
+  try{seen=sessionStorage.getItem('bs-intro')==='1'}catch(e){}
+  if(rm||seen){intro.style.display='none';over=true;body.classList.remove('lock');body.classList.add('go')}
+  else{
+    (function tick(){
+      if(over)return;
+      if(i<text.length){typed.textContent+=text.charAt(i++);timers.push(setTimeout(tick,i===7?160:46))}
+      else timers.push(setTimeout(done,420));
+    })();
+    try{sessionStorage.setItem('bs-intro','1')}catch(e){}
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window&&!rm){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else els.forEach(function(el){el.classList.add('in')});
+
+  /* ---------- easter egg: the carriage bell ---------- */
+  var note=document.getElementById('note'), hideT, taps=0, tapT, buf='';
+  function ding(){
+    try{
+      var C=window.AudioContext||window.webkitAudioContext, c=new C(), now=c.currentTime;
+      [1760,2637].forEach(function(f,k){
+        var o=c.createOscillator(), g=c.createGain();
+        o.type='sine'; o.frequency.value=f;
+        g.gain.setValueAtTime(.0001,now);
+        g.gain.exponentialRampToValueAtTime(k?.05:.12,now+.01);
+        g.gain.exponentialRampToValueAtTime(.0001,now+1.4);
+        o.connect(g);g.connect(c.destination);o.start(now);o.stop(now+1.5);
+      });
+    }catch(e){}
+  }
+  function bell(){
+    ding();
+    note.classList.add('show');
+    clearTimeout(hideT);
+    hideT=setTimeout(function(){note.classList.remove('show')},4500);
+  }
+  window.addEventListener('keydown',function(e){
+    if(e.key.length!==1)return;
+    buf=(buf+e.key.toLowerCase()).slice(-4);
+    if(buf==='ding'){buf='';bell()}
+  });
+  document.getElementById('mono').addEventListener('click',function(){
+    taps++;clearTimeout(tapT);
+    tapT=setTimeout(function(){taps=0},1200);
+    if(taps>=5){taps=0;bell()}
+  });
+})();
+</script>
+</body>
+</html>
